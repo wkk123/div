@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分页</title>
+	<script src="jquery-1.11.2.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="jqPaginator.min.js"></script>
+	 <script>
+	//     $('#id').jqPaginator({
+ //            totalPages: 100,
+ //            visiblePages: 10,
+ //            currentPage: 1,
+ //            onPageChange: function (num, type) {
+ //                $('#text').html('当前第' + num + '页');
+ //            }
+ //        });
+
+	 </script>
+</head>
+<body>
+	<div class="demo">
+		<ul id="demo4" class="pagination pagination4">
+			<li class="prev disabled" jp-role="prev" jp-data="0">
+				<a href="javascript:void(0);">前一页</a>
+			</li>
+			<li class="page active" jp-role="page" jp-data="1">
+				<a href="javascript:void(0);">1/100</a>
+			</li>
+			<li class="next" jp-role="next" jp-data="2">
+				<a href="javascript:void(0);">后一页</a>
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	
+    $(function () {
+        $("#demo1").jqPaginator({
+            totalPages: 100,
+            visiblePages: 10,
+            currentPage: 1,
+            first: '<li class="first"><a href="javascript:void(0);">First<\/a><\/li>',
+            prev: '<li class="prev"><a href="javascript:void(0);">Previous<\/a><\/li>',
+            next: '<li class="next"><a href="javascript:void(0);">Next<\/a><\/li>',
+            last: '<li class="last"><a href="javascript:void(0);">Last<\/a><\/li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                $("#demo1-text").html("当前第" + n + "页");
+            }
+        });
+        $("#demo2").jqPaginator({
+            totalPages: 100,
+            visiblePages: 10,
+            currentPage: 1,
+            first: '<li class="first"><a href="javascript:void(0);">首页<\/a><\/li>',
+            prev: '<li class="prev"><a href="javascript:void(0);"><i class="arrow arrow2"><\/i>上一页<\/a><\/li>',
+            next: '<li class="next"><a href="javascript:void(0);">下一页<i class="arrow arrow3"><\/i><\/a><\/li>',
+            last: '<li class="last"><a href="javascript:void(0);">末页<\/a><\/li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                $("#demo2-text").html("当前第" + n + "页");
+            }
+        });
+        $("#demo3").jqPaginator({
+            totalPages: 100,
+            visiblePages: 10,
+            currentPage: 1,
+            prev: '<a class="prev" href="javascript:void(0);">&lt;<\/a>',
+            next: '<a class="next" href="javascript:void(0);">&gt;<\/a>',
+            page: '<a href="javascript:void(0);">{{page}}<\/a>',
+            onPageChange: function (n) {
+                $("#demo3-text").html("当前第" + n + "页");
+            }
+        });
+        $("#demo4").jqPaginator({
+            totalPages: 100,
+            visiblePages: 1,
+            currentPage: 1,
+            prev: '<li class="prev"><a href="javascript:void(0);">前一页<\/a><\/li>',
+            next: '<li class="next"><a href="javascript:void(0);">后一页<\/a><\/li>',
+            page: '<li class="page"><a href="javascript:void(0);"> {{page}} / {{totalPages}} <\/a><\/li>',
+            onPageChange: function (n) {
+                $("#demo4-text").html("当前第" + n + "页");
+            }
+        });
+        $(".pagination-demo").jqPaginator({
+            totalPages: 100,
+            visiblePages: 10,
+            currentPage: 1,
+            first: '<li class="first"><a href="javascript:void(0);">First<\/a><\/li>',
+            prev: '<li class="prev"><a href="javascript:void(0);">Previous<\/a><\/li>',
+            next: '<li class="next"><a href="javascript:void(0);">Next<\/a><\/li>',
+            last: '<li class="last"><a href="javascript:void(0);">Last<\/a><\/li>',
+            page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+            onPageChange: function (n) {
+                $("#pagination-demo-text").html("当前第" + n + "页");
+            }
+        });
+        setTimeout(function () {
+            var n = $(".bs-sidebar");
+            n.affix({
+                offset: {
+                    top: 258
+                }
+            });
+        }, 100);
+        hljs.initHighlightingOnLoad()
+    })
+
+</script>
+</html>
